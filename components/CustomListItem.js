@@ -1,5 +1,6 @@
 import React from 'react';
 import {Text, FlatList, View, StyleSheet} from "react-native";
+import { Icon } from 'react-native-elements';
 
 class CustomList extends React.Component {
   render() {
@@ -14,8 +15,13 @@ class CustomList extends React.Component {
         renderItem={({item}) =>
           (
             <View style={styles.itemWrapper}>
-              <Text style={styles.itemTitle}>{item.key}</Text>
-              <Text style={styles.itemNote}>{item.key}</Text>
+              <View>
+                <Text style={styles.itemTitle}>{item.key}</Text>
+                <Text style={styles.itemNote}>{item.key}</Text>
+              </View>
+              <View style={styles.chevronWrapper}>
+                <Icon name='chevron-right' type={'evilicon'} size={30} color={'#080808'}/>
+              </View>
             </View>
           )
         }
@@ -28,9 +34,10 @@ export default CustomList;
 
 const styles = StyleSheet.create({
   itemWrapper: {
-    marginHorizontal: 30,
-    marginTop: 10,
-    marginBottom: 10
+    paddingHorizontal: 30,
+    paddingTop: 10,
+    paddingBottom: 10,
+    flexDirection: 'row',
   },
 
   itemTitle: {
@@ -41,6 +48,13 @@ const styles = StyleSheet.create({
   itemNote: {
     fontSize: 10,
     color: '#A7A7A7'
+  },
+
+  chevronWrapper: {
+    color: '#080808',
+    right: 30,
+    position: 'absolute',
+    marginTop: 12,
   },
 });
 
