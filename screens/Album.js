@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet, View, Text } from 'react-native';
-import CustomList from './components/CustomListItem'
+import CustomList from '../components/CustomListItem'
 
-export default class Home extends Component {
+export default class Album extends Component {
   render() {
     return (
       <View style={styles.background}>
